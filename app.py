@@ -2,9 +2,10 @@ from flask import Flask, render_template, request
 from flask_wtf import FlaskForm
 from wtforms import TextAreaField, SubmitField
 from translator import translate
+from config import SECRET_KEY
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'daniel'
+app.config['SECRET_KEY'] = SECRET_KEY
 
 class TextArea(FlaskForm):
     text = TextAreaField('Enter text to translate')
